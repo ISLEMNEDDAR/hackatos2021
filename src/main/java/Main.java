@@ -2,6 +2,10 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class Main {
 
     public void connect() {
@@ -15,11 +19,18 @@ public class Main {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
+    public HashMap<String, ArrayList<Double>> initListLucosSuspect(){
+        HashMap<String, ArrayList<Double>> listLucosSuscpect = new HashMap<>();
+        listLucosSuscpect.put("TPOX",new ArrayList<Double>(Arrays.asList(16.0,15.0)));
+        return listLucosSuscpect;
+    }
+;
     public static void main(String[] args) {
         Main app = new Main();
         app.connect();
+
+
     }
 }
